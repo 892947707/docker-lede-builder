@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/openwrt-build
+      run: |
+           docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/openwrt-build
            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
            docker push ${{ secrets.DOCKER_USERNAME }}/openwrt-build
