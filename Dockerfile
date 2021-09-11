@@ -1,4 +1,5 @@
 FROM debian:buster-slim
+MAINTAINER dswang <dswangadmin@163.com>
 
 ARG DEBIAN_FRONTEND=noninteractive
 
